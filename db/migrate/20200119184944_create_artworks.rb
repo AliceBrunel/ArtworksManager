@@ -5,7 +5,6 @@ class CreateArtworks < ActiveRecord::Migration[6.0]
 		t.belongs_to :artist
 		t.decimal :price
 		t.string :technic
-		t.belongs_to :status
 		t.belongs_to :user
 
       t.timestamps
