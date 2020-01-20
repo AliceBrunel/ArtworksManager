@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\models",
+    "\\db",
+    "\\db\\migrate"
+  ],
+  "SelectedNode": "\\db\\migrate\\20200119194124_create_collections.rb",
+  "PreviewInSolutionExplorer": false
+}
