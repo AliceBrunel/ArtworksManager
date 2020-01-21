@@ -3,4 +3,5 @@ class User < ApplicationRecord
 	has_many :museums, through: :teams
 	has_many :artworks
 
+	has_secure_password
 end

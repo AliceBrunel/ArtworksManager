@@ -9,11 +9,8 @@ class ArtworksController < ApplicationController
   end 
 
   def create
-   if (artwork = Artwork.create artwork_params)
-    redirect_to artwork_path(artwork)
-   else
-    render 'new'
-   end 
+   artwork = Artwork.create artwork_params
+   redirect_to artwork_path(artwork)
   end 
 
   def show 
