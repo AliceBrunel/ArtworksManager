@@ -2,10 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\controllers",
     "\\app\\models",
+    "\\app\\views",
+    "\\app\\views\\artworks",
+    "\\config",
     "\\db",
     "\\db\\migrate"
   ],
-  "SelectedNode": "\\db\\migrate\\20200119194124_create_collections.rb",
+  "SelectedNode": "\\db\\schema.rb",
   "PreviewInSolutionExplorer": false
 }
