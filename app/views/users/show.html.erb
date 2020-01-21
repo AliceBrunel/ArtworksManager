@@ -7,3 +7,12 @@
  <li><%= @user.job %></li>
  <li><%= @user.position %></li>
 </ul>
+
+<h2>My arts</h2>
+ <ul>
+  <%= @user.artworks.each do |a| %>
+  <li><%= a.title %></li>
+  <% end %>
+ </ul>
+
+ <%= link_to 'Add an art', new_artwork_url %>
