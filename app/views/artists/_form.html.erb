@@ -1,0 +1,29 @@
+<%= form_for @artist do |f| %>
+	<%= f.label :full_name %>
+	<%= f.text_field :full_name %>
+	<br>
+	<%= f.label :biography %>
+	<%= f.text_field :biography %>
+	<br>
+	<%= f.label :birth_date %>
+	<%= f.date_field :birth_date %>
+	<br>
+	<%= f.label :death_date %>
+	<%= f.date_field :death_date %>
+	<br>
+	<%= f.label :style %>
+	<%= f.text_field :style %>
+	<br>
+		<%= f.fields_for :artworks do |a| %>
+		<%= a.label :title %>
+		<%= a.text_field :title %>
+		<br>
+		<%= a.label :price %>
+		<%= a.text_field :price %>
+		<br>
+		<%= a.label :technic %>
+		<%= a.text_field :technic %>
+		<% end %>
+ <%= f.submit "Add to my collection" %>
+<% end %>
+
