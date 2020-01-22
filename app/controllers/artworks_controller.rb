@@ -1,5 +1,6 @@
 class ArtworksController < ApplicationController
-	
+skip_before_action :verify_user_is_authenticated
+
   def index
    @artworks = Artwork.all
   end
@@ -9,8 +10,10 @@ class ArtworksController < ApplicationController
   end 
 
   def create
-   artwork = Artwork.create artwork_params
-   redirect_to artwork_path(artwork)
+   @user = User.find_by(id: session[:user_id])
+   @artwork = @user.artworks.create(artwork_params)
+   @artwork.save
+   redirect_to artwork_path(artwork_url)
   end 
 
   def show 
@@ -23,8 +26,8 @@ class ArtworksController < ApplicationController
      params.require(:artwork).permit(
 	  :title,
 	  :price,
-	  :technic,
-	  :user_id
+	  :technic
       )
    end
+
 end
