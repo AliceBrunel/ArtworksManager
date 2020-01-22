@@ -6,10 +6,11 @@
     "\\app\\models",
     "\\app\\views",
     "\\app\\views\\artworks",
+    "\\app\\views\\session",
+    "\\app\\views\\users",
     "\\config",
-    "\\db",
-    "\\db\\migrate"
+    "\\storage"
   ],
-  "SelectedNode": "\\db\\schema.rb",
+  "SelectedNode": "\\app\\controllers\\application_controller.rb",
   "PreviewInSolutionExplorer": false
 }

@@ -6,7 +6,7 @@ skip_before_action :verify_user_is_authenticated, only: [:new, :create]
   end
 
   def create
-    if @user = User.find_by(name:params[:user][:name])
+    if @user = User.find_by_email(params[:email])
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
