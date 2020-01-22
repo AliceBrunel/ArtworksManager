@@ -1,12 +1,15 @@
 <%= form_for @artwork do |f| %>
- <%= f.label :title %>
- <%= f.text_field :title %>
-   <br>
- <%= f.label :price %>
- <%= f.text_field :price %>
-   <br>
- <%= f.label :technic %>
- <%= f.text_field :technic %>
-   <br>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<br>
+	<%= f.label :price %>
+	<%= f.text_field :price %>
+	<br>
+	<%= f.label :technic %>
+	<%= f.text_field :technic %>
+	<br>
+	<%= f.hidden_field :artist_id %>
+
  <%= f.submit "Add to my collection" %>
 <% end %>
+
