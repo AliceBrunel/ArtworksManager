@@ -20,6 +20,10 @@ class ArtworksController < ApplicationController
    @artwork = Artwork.find_by(id:params[:id])
   end 
 
+  def edit 
+   @artwork = Artwork.find_by(id:params[:id])
+  end
+
  private 
 
    def artwork_params 
