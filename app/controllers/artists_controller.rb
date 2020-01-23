@@ -1,4 +1,6 @@
 class ArtistsController < ApplicationController
+	skip_before_action :verify_user_is_authenticated
+
   def index
    @artists = Artist.all
   end
@@ -17,7 +19,7 @@ class ArtistsController < ApplicationController
   end 
 
   def show 
-   artist = Artist.find_by(id:params[:id])
+   @artist = Artist.find_by(id:params[:id])
   end 
 
  private 
