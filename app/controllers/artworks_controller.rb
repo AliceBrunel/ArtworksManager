@@ -24,7 +24,7 @@ skip_before_action :verify_user_is_authenticated
 
    def artwork_params 
      params.require(:artwork).permit(
-	 :artist_id
+	 :artist_id,
 	  :title,
 	  :price,
 	  :technic

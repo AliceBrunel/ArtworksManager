@@ -1,0 +1,10 @@
+<%= @artists.each do |a| %>
+<ul>
+<li><%= @artist.id %></li>
+<li><%= @artist.name %></li>
+<li><%= @artist.artworks.each do |artwork| %></li>
+	<li><%= artwork.id %></li>
+	<li><%= artwork.name %></li>
+	<% end %>
+<% end %>
+</ul>

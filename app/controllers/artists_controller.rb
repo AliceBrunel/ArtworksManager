@@ -4,20 +4,20 @@ class ArtistsController < ApplicationController
   end
 
   def new 
-   @artist = Artist.new
-   @artist.artworks.build
+   artist = Artist.new
+   artist.artworks.build
   end 
 
   def create
-   @artist = Artist.create(artist_params)
-   @artwork = @artist.artworks.last
-   @artwork.user = current_user
-   @artist.save
-   redirect_to artist_path(artist_url)
+   artist = Artist.create(artist_params)
+   artwork = artist.artworks.last
+   artwork.user = current_user
+   artist.save
+   redirect_to artist_path(artist)
   end 
 
   def show 
-   @artist = Artist.find_by(id:params[:id])
+   artist = Artist.find_by(id:params[:id])
   end 
 
  private 

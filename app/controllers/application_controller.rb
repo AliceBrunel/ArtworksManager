@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :verify_user_is_authenticated
   helper_method :current_user
 
+  def home
+  end
 
    private
     def verify_user_is_authenticated
