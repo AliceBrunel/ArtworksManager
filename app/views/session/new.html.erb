@@ -1,25 +1,29 @@
-<%= form_tag('/session', method: :post) do %>
+<%= form_for(:session, url: signin_path) do |f| %>
 
- <%= label_tag(:name, "Your name:") %>
- <%= text_field_tag 'name' %>
+ <%= f.label :name %>
+ <%= f.text_field :name %>
    <br>
- <%= label_tag(:name, "Your surname:") %>
- <%= text_field_tag 'surname' %>
+ <%= f.label :surname %>
+ <%= f.text_field :surname %>
    <br>
- <%= label_tag(:name, "Your email:") %>
- <%= text_field_tag 'email' %>
+ <%= f.label :email %>
+ <%= f.text_field :email %>
    <br>
- <%= label_tag(:name, "Your job:") %>
- <%= text_field_tag 'job' %>
+ <%= f.label :address %>
+ <%= f.text_field :address %>
    <br>
- <%= label_tag(:name, "Your position:") %>
- <%= text_field_tag 'position' %>
+ <%= f.label :phone %>
+ <%= f.text_field :phone %>
+   <br>
+ <%= f.label :job %>
+ <%= f.text_field :job %>
+   <br>
+ <%= f.label :position %>
+ <%= f.text_field :position %>
+ <br>
+ <p> Are you a(n) :</p>
+ <%= f.select(:job, @group_options) %>
 
- <%= label_tag(:password, "Your password:") %>
- <%= password_field_tag(:password, nil, class: "form-control") %>
 
-
- 
-  <%= submit_tag("Sign In") %>
-
-<% end %>
+ <%= f.submit %>
+ <% end %>

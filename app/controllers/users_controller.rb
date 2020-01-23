@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
  skip_before_action :verify_user_is_authenticated, only: [:new,:create]
+
+
   def index
   end 
 
   def new
    @user = User.new
+   user.groups.build
   end 
 
   def create 
@@ -30,7 +33,8 @@ class UsersController < ApplicationController
 	  :address,
 	  :phone,
 	  :position,
-	  :job
+	  :job,
+	  :group
       )
    end
 

@@ -5,12 +5,9 @@
     "\\app\\controllers",
     "\\app\\models",
     "\\app\\views",
-    "\\app\\views\\artists",
-    "\\app\\views\\artworks",
-    "\\app\\views\\session",
-    "\\app\\views\\users",
-    "\\config"
+    "\\config",
+    "\\db"
   ],
-  "SelectedNode": "\\app\\views\\artworks\\new.html.erb",
+  "SelectedNode": "\\app\\models\\user.rb",
   "PreviewInSolutionExplorer": false
 }
