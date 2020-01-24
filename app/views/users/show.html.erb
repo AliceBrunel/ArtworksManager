@@ -4,7 +4,7 @@
  <li><%= @user.email %></li>
  <li><%= @user.address %></li>
  <li><%= @user.phone %></li>
- <li><%= @user.job %></li>
+ <li><%= @user.group %></li>
  <li><%= @user.position %></li>
 </ul>
 
@@ -16,6 +16,6 @@
  </ul>
 
  <%= link_to 'Add an art', new_artwork_url %>
+<br>
 
-
- <%= @user.id %>
+<%= link_to 'Log out', logout_path, method: "delete" %>

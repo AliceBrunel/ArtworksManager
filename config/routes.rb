@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: 'welcome#home'
 
-  get '/signin', to: 'sessions#new', as: 'signin'
+  get '/login', to: 'sessions#new', as: 'signin'
   post '/sessions', to: 'sessions#create', as: 'sessions'
-  delete '/sessions/', to: 'sessions#destroy'
+  delete '/logout/', to: 'sessions#destroy'
 
   resources :collections
   resources :users
