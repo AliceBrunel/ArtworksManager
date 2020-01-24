@@ -29,6 +29,7 @@ class UsersController < ApplicationController
 	  :name,
 	  :surname,
 	  :email,
+    :password_digest,
 	  :address,
 	  :phone,
 	  :position,

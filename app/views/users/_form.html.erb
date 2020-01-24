@@ -8,20 +8,20 @@
  <%= f.label :email %>
  <%= f.text_field :email %>
    <br>
+  <%= f.label :password_digest, "Password" %>
+  <%= f.password_field :password_digest %>
+  <br>
  <%= f.label :address %>
  <%= f.text_field :address %>
    <br>
  <%= f.label :phone %>
  <%= f.text_field :phone %>
    <br>
- <%= f.label :job %>
- <%= f.text_field :job %>
-   <br>
  <%= f.label :position %>
  <%= f.text_field :position %>
 
- <%= f.fields_for :groups do |g| %>
-	<%= g.collection_select(:group, Group.all, :group, :group, prompt: "Select") %>
+ <%= f.label :group %>
+ <%= f.collection_select :group, Group.all, :name, :name %>
 
  <%= f.submit %>
  <% end %>
