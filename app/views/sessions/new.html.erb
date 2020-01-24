@@ -1,0 +1,30 @@
+<%= form_tag(sessions_path) do %>
+
+ <%= label_tag :name %>
+ <%= text_field_tag :name %>
+   <br>
+ <%= label_tag :surname %>
+ <%= text_field_tag :surname %>
+   <br>
+ <%= label_tag :email %>
+ <%= text_field_tag :email %>
+   <br>
+ <%= label_tag :password %>
+ <%= password_field_tag :password %>
+   <br>
+
+ <%= label_tag :address %>
+ <%= text_field_tag :address %>
+   <br>
+ <%= label_tag :phone %>
+ <%= text_field_tag :phone %>
+   <br>
+ <%= label_tag :position %>
+ <%= text_field_tag :position %>
+ <br>
+ <p> Are you a(n) :</p>
+ <%= select("user", "group", Group.all)%>
+
+
+ <%= submit_tag %>
+ <% end %>

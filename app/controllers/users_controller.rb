@@ -3,29 +3,28 @@ class UsersController < ApplicationController
 
 
   def index
-  end 
+  end
 
   def new
    @user = User.new
-   user.groups.build
-  end 
+  end
 
-  def create 
+  def create
    if (user = User.create user_params)
     redirect_to user_path(user)
    else
     render 'new'
-   end 
-  end 
+   end
+  end
 
 
-  def show 
+  def show
    @user = User.find_by(id:params[:id])
   end
 
- private 
+ private
 
-   def user_params 
+   def user_params
      params.require(:user).permit(
 	  :name,
 	  :surname,
@@ -33,7 +32,6 @@ class UsersController < ApplicationController
 	  :address,
 	  :phone,
 	  :position,
-	  :job,
 	  :group
       )
    end
