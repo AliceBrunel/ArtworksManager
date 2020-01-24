@@ -10,11 +10,15 @@ class UsersController < ApplicationController
   end
 
   def create
-   if (user = User.create user_params)
-    redirect_to user_path(user)
-   else
-    render 'new'
-   end
+  @user = User.new(user_params)
+
+    if @user.save!
+      flash[:notice] = "Account created successfully!"
+      redirect_to users_path(@user)
+    else
+      flash.now.alert = "Oops, couldn't create account. Please make sure you are using a valid email and password and try again."
+      render 'new'
+    end
   end
 
 
@@ -29,7 +33,8 @@ class UsersController < ApplicationController
 	  :name,
 	  :surname,
 	  :email,
-    :password_digest,
+    :password,
+    :password_confirmation,
 	  :address,
 	  :phone,
 	  :position,
