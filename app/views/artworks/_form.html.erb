@@ -2,6 +2,9 @@
 	<%= f.label :title %>
 	<%= f.text_field :title %>
 	<br>
+	<%= f.label :artist %>
+	<%= f.collection_select :id, Artist.all, :id, :full_name  %>
+	<br>
 	<%= f.label :price %>
 	<%= f.text_field :price %>
 	<br>
