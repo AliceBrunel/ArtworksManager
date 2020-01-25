@@ -1,5 +1,4 @@
 class ArtworksController < ApplicationController
-	skip_before_action :verify_user_is_authenticated
 
   def index
    @artworks = Artwork.all
@@ -17,7 +16,8 @@ class ArtworksController < ApplicationController
   end 
 
   def show 
-   @artwork = Artwork.find_by(id:params[:id])
+	verify_user_is_authenticated
+	@artwork = Artwork.find_by(id:params[:id])
   end 
 
   def edit 

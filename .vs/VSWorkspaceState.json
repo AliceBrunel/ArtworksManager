@@ -5,9 +5,13 @@
     "\\app\\controllers",
     "\\app\\models",
     "\\app\\views",
-    "\\config",
-    "\\db"
+    "\\app\\views\\artists",
+    "\\app\\views\\artworks",
+    "\\app\\views\\session",
+    "\\app\\views\\users",
+    "\\db",
+    "\\db\\migrate"
   ],
-  "SelectedNode": "\\app\\models\\user.rb",
+  "SelectedNode": "\\Gemfile",
   "PreviewInSolutionExplorer": false
 }
