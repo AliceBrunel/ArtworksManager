@@ -2,8 +2,8 @@
 	<%= f.label :title %>
 	<%= f.text_field :title %>
 	<br>
-	<%= f.label :artist %>
-	<%= f.collection_select :id, Artist.all, :id, :full_name  %>
+	<%= f.label :artist_id %>
+	<%= f.collection_select :artist_id, Artist.all, :id, :full_name  %>
 	<br>
 	<%= f.label :price %>
 	<%= f.text_field :price %>
@@ -11,7 +11,6 @@
 	<%= f.label :technic %>
 	<%= f.text_field :technic %>
 	<br>
-	<%= f.hidden_field :artist_id %>
 
  <%= f.submit "Add to my collection" %>
 <% end %>
