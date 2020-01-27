@@ -1,1 +1,9 @@
 <h1><%= @museum.name %></h1>
+<p>Collections</p>
+<ul>
+  <% @museum.collections.each do |collection| %>
+  <li>
+    <%= collection.name %>
+    </li>
+    <% end %>
+</ul>
