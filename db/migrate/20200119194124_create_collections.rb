@@ -5,7 +5,6 @@ class CreateCollections < ActiveRecord::Migration[6.0]
 		t.string :description
 		t.date :start_date
 		t.date :end_date
-		t.belongs_to :museum
 
       t.timestamps
     end

@@ -47,8 +47,10 @@ ActiveRecord::Schema.define(version: 2020_01_24_120806) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_groups_on_user_id", unique: true
   end
 
   create_table "inventories", force: :cascade do |t|
@@ -89,7 +91,9 @@ ActiveRecord::Schema.define(version: 2020_01_24_120806) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "job"
     t.string "group"
   end
 
+  add_foreign_key "groups", "users"
 end
