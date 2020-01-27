@@ -2,12 +2,11 @@ class CollectionsController < ApplicationController
 
 	def new 
 		@collection = Collection.new
-		museum.collections.build
-
+		
 	end
 
 	def create
-		museum = Museum.find_by(params[:museum_id])
+		
 		collection = Collection.create(collection_params)		
 		redirect_to museum_path(museum)
 	end 

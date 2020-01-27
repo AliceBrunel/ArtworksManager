@@ -9,6 +9,7 @@ class MuseumsController < ApplicationController
 
 	def create 
 		museum = Museum.create(museum_params)
+		museum.users << current_user
 		redirect_to museum_path(museum)
 	end
 
