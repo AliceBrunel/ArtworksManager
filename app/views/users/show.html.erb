@@ -10,9 +10,9 @@
 
 <h2>My arts</h2>
  <ul>
-  <%= @user.artworks.each do |a| %>
+   <% @user.artworks.each do |a| %>
   <li><%= a.title %></li>
-  <% end %>
+     <% end %>
  </ul>
 
  <%= link_to 'Add an art', new_artwork_url %>
