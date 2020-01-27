@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :museums
   resources :artists
   resources :artworks
+  resources :inventories
 
 
 
