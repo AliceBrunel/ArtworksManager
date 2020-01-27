@@ -2,13 +2,17 @@ class CollectionsController < ApplicationController
 
 	def new 
 		@collection = Collection.new
+		museum.collections.build
+
 	end
 
-	def create 
-		collection = Collection.create(collection_params)
+	def create
+		museum = Museum.find_by(params[:museum_id])
+		collection = Collection.create(collection_params)		
+		redirect_to museum_path(museum)
 	end 
 
-	def show 
+	def show		
 		@collection = Collection.find_by(id:params[:id])
 	end 
 
@@ -25,6 +29,6 @@ class CollectionsController < ApplicationController
 			:start_date,
 			:end_date
 			)
-	end
+		end
 
 end
