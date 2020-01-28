@@ -18,6 +18,7 @@ class ArtworksController < ApplicationController
 
 	def show
 		@artwork = Artwork.find_by(id:params[:id])
+		@collections = current_user.museums.map{|m| m.collections}
 	end 
 
 	def edit
