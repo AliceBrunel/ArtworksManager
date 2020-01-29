@@ -4,11 +4,13 @@
     "\\app",
     "\\app\\controllers",
     "\\app\\views",
+    "\\app\\views\\artworks",
     "\\app\\views\\collections",
     "\\app\\views\\inventories",
     "\\app\\views\\users",
-    "\\config"
+    "\\config",
+    "\\db"
   ],
-  "SelectedNode": "\\app\\controllers\\inventories_controller.rb",
+  "SelectedNode": "\\db\\schema.rb",
   "PreviewInSolutionExplorer": false
 }

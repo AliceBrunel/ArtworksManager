@@ -7,8 +7,6 @@
   
   <br>
 
-<% form_with model: @collections do |f| %>
-<%= f.label(@collections, "Add to collection") %>
-<%= f.collection_select(:collection_id, @collections, :collection_id, collection.name) %>
-  <%= f.submit %>
-<% end %>
+
+<%= options_for_select(@collections) %>
+  
