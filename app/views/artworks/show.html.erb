@@ -8,5 +8,4 @@
   <br>
 
 
-<%= options_for_select(@collections) %>
-  
+<%= collection_check_boxes :collection, :id, @collections, :id, :name %>
