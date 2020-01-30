@@ -9,8 +9,8 @@ class User < ApplicationRecord
 
 	
 	
-	def can_manage_collections?
-		user_museums = self.museums
-		museum.teams.where("user_id = ?", self.id) ? true : false
+	def can_manage?(collection)
+		museum = collection.museum
+		museum.users.find_by(id: 1) ? true : false
 	end
 end
