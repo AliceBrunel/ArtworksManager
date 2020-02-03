@@ -5,8 +5,8 @@ class ArtistsController < ApplicationController
 	end
 
 	def new 
-		artist = Artist.new
-		artist.artworks.build
+		@artist = Artist.new
+		@artist.artworks.build
 	end 
 
 	def create
