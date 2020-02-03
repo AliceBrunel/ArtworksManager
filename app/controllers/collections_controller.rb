@@ -13,7 +13,6 @@ class CollectionsController < ApplicationController
 	end 
 
 	def show		
-		raise_params
 		@collection = Collection.find_by(id:params[:id])
 	end 
 
@@ -30,7 +29,7 @@ class CollectionsController < ApplicationController
 			collection.artworks << artwork
 		end
 		collection.save
-		redirect_to artwork_path
+		redirect_to artwork_path(artwork)
 	end 
 
 	private 
