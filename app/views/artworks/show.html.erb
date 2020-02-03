@@ -8,5 +8,12 @@
   <br>
 
     <h3>Add to collection</h3>
-<% form_for %>
-<%= collection_check_boxes :collection, :id, @collections, :id, :name %>
+<% @collections.each do |c| %>
+  <p><%= c.name %> | 
+    <% if c.artworks.any? {|a| a.id == @artwork.id } %>
+      <%= link_to "remove", collection_path(c, artwork: @artwork.id), method: "patch" %>
+        <% else %>
+    <%= link_to "add", collection_path(c, artwork: @artwork.id), method: "patch" %>
+    <% end %>
+  </p>
+  <% end %>

@@ -8,9 +8,9 @@
     "\\app\\views",
     "\\app\\views\\artworks",
     "\\app\\views\\collections",
-    "\\app\\views\\inventories",
-    "\\app\\views\\users"
+    "\\app\\views\\users",
+    "\\config"
   ],
-  "SelectedNode": "\\app\\models\\user.rb",
+  "SelectedNode": "\\app\\views\\artworks\\add_to_collection.html.erb",
   "PreviewInSolutionExplorer": false
 }

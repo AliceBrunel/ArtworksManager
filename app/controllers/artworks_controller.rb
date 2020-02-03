@@ -19,7 +19,6 @@ class ArtworksController < ApplicationController
 	def show
 		@artwork = Artwork.find_by(id:params[:id])
 		@collections = Collection.all.select{|c| current_user.can_manage?(c)}
-
 	end 
 
 	def edit

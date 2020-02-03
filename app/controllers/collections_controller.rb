@@ -13,11 +13,24 @@ class CollectionsController < ApplicationController
 	end 
 
 	def show		
+		raise_params
 		@collection = Collection.find_by(id:params[:id])
 	end 
 
 	def edit 
 		@collection = Collection.find_by(id:params[:id])
+	end 
+
+	def update
+		collection = Collection.find_by(id:params[:id])
+		artwork = Artwork.find_by(id: params[:artwork])
+		if collection.artworks.any? {|a| a == artwork }
+			collection.artworks.delete(artwork)
+		else
+			collection.artworks << artwork
+		end
+		collection.save
+		redirect_to artwork_path
 	end 
 
 	private 
