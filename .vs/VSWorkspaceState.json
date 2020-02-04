@@ -3,14 +3,14 @@
     "",
     "\\app",
     "\\app\\controllers",
-    "\\app\\helpers",
     "\\app\\models",
     "\\app\\views",
+    "\\app\\views\\artists",
     "\\app\\views\\artworks",
     "\\app\\views\\collections",
     "\\app\\views\\users",
     "\\config"
   ],
-  "SelectedNode": "\\app\\views\\artworks\\add_to_collection.html.erb",
+  "SelectedNode": "\\app\\controllers\\artists_controller.rb",
   "PreviewInSolutionExplorer": false
 }
