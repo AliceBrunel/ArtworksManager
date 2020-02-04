@@ -34,7 +34,10 @@
         <%= link_to "Museums", museums_path, class: "nav-link" %>
       </li>
     </ul>
+	<% if current_user.is_logged_in? %>
+	<% else %>
 	<%= button_to "Login", signin_path, class: "btn btn-primary btn-sm" %>
+	<% end %>
   </div>
 </nav>
 <!--END-->
