@@ -14,5 +14,4 @@ class User < ApplicationRecord
 		museum.users.find_by(id: 1) ? true : false
 	end
 
-
 end

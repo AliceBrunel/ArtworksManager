@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\assets",
     "\\app\\controllers",
     "\\app\\models",
     "\\app\\views",
+    "\\app\\views\\application",
     "\\app\\views\\artists",
-    "\\app\\views\\artworks",
-    "\\app\\views\\collections",
-    "\\app\\views\\users",
-    "\\config"
+    "\\app\\views\\layouts",
+    "\\app\\views\\welcome"
   ],
-  "SelectedNode": "\\app\\controllers\\artists_controller.rb",
+  "SelectedNode": "\\app\\models\\user.rb",
   "PreviewInSolutionExplorer": false
 }
