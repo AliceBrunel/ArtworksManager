@@ -8,9 +8,9 @@
     "\\app\\views",
     "\\app\\views\\application",
     "\\app\\views\\artists",
-    "\\app\\views\\layouts",
-    "\\app\\views\\welcome"
+    "\\app\\views\\artworks",
+    "\\db"
   ],
-  "SelectedNode": "\\app\\models\\user.rb",
+  "SelectedNode": "\\db\\schema.rb",
   "PreviewInSolutionExplorer": false
 }
