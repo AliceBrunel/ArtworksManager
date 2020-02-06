@@ -4,19 +4,19 @@
  
  <form>
   <fieldset>
-	<%= form_tag(sessions_path) do %>
+	<%= form_tag sessions_path do |form| %>
     <div class="form-group">
 		<%= label_tag :email %>
 		<br>
-		<%= text_field_tag :email,"", class:"form-control", placeholder: "Enter email" %>
+		<%= text_field_tag :email, "", class:"form-control", placeholder: "Enter email" %>
     </div>
     <div class="form-group">
       <%= label_tag :password, "Password" %>
 	  <br>
-      <%= password_field_tag :password,"", class:"form-control", placeholder: "Enter password"  %>
+      <%= password_field_tag :password, "", class:"form-control", placeholder: "Enter password"  %>
     </div>
     <div class="form-group">
-     <%= submit_tag "log in", class: "btn btn-primary" %>
+     <%= submit_tag "log in" %>
   </div>
 	<% end %>
 </fieldset>

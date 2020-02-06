@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  root to: 'welcome#home'
 
-  get 'users/new', to: 'users#new', as: :new_user
-  post 'users', to: 'users#create'
-  get 'users/:id', to: 'users#show', as: :user
 
-  get '/login', to: 'sessions#new', as: 'signin'
-  post '/sessions', to: 'sessions#create', as: 'sessions'
-  delete '/logout', to: 'sessions#destroy'
-
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy', as: 'logout'
+  
+  resources :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
   resources :collections
   resources :museums
   resources :artists
@@ -18,6 +16,7 @@ Rails.application.routes.draw do
 		end
 	end 
 
-
+	
+  root 'welcome#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
