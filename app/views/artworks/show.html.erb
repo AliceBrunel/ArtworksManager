@@ -1,21 +1,30 @@
-<h1>Art</h1>
-
-<br>
-<%=  @artwork.title %>
-<%=  @artwork.price %>
-<%=  @artwork.technic %>
-  
-  <br>
-
-    <h3>Add to collection</h3>
-<% @collections.each do |c| %>
-  <p><%= c.name %> | 
-    <% if c.artworks.any? {|a| a.id == @artwork.id } %>
-      <%= link_to "remove", collection_path(c, artwork: @artwork.id), method: "patch" %>
-        <% else %>
-    <%= link_to "add", collection_path(c, artwork: @artwork.id), method: "patch" %>
-      <% end %>|
-    <%= link_to "View collection", collection_path(c) %>
-    </p>
-  <% end %>
-   
+<div class="col">
+  <div>
+    <h1><%= @artwork.title %></h1>
+    <p><strong>Price : </strong><%= @artwork.price %></p>
+    <p><strong>Technic : </strong><%= @artwork.technic %></p>
+  </div>
+  <br></br>
+    <div>
+      <h3>Add to collection</h3>
+      <ul class="list-group">
+        <% @collections.each do |c| %>
+        <li class="list-group-item d-flex">
+          <div class="mr-auto">
+            <%= c.name %>
+          </div>
+            <span class="breadcrumb-item">
+              <% if c.artworks.any? {|a| a.id == @artwork.id } %>            
+              <%= link_to "remove", collection_path(c, artwork: @artwork.id), method: "patch" %>
+              <% else %>            
+              <%= link_to "add", collection_path(c, artwork: @artwork.id), method: "patch" %>
+              <% end %>
+            </span>
+            <span class="breadcrumb-item">
+             <%= link_to "View collection", collection_path(c) %>
+            </span>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+</div>
