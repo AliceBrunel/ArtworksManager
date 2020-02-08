@@ -1,8 +1,11 @@
 <div class="col">
   <div>
     <h1><%= @artwork.title %></h1>
+    <p><strong>Author : </strong><%= @artwork.artist.full_name %></p>
     <p><strong>Price : </strong><%= @artwork.price %></p>
     <p><strong>Technic : </strong><%= @artwork.technic %></p>
+    <p><strong>Currently belong to </strong><%= @artwork.user.name %> <%= @artwork.user.surname %>
+  </p>
   </div>
   <br></br>
     <div>
