@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_120806) do
+ActiveRecord::Schema.define(version: 2020_02_08_140318) do
 
   create_table "artists", force: :cascade do |t|
     t.string "full_name"
@@ -93,6 +93,12 @@ ActiveRecord::Schema.define(version: 2020_01_24_120806) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "job"
     t.string "group"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "groups", "users"

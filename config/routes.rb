@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
 
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  post '/logout', to: 'sessions#destroy', as: 'logout'
-  
+  devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :collections
@@ -17,6 +15,6 @@ Rails.application.routes.draw do
 	end 
 
 	
-  root 'welcome#home'
+  root to: 'welcome#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
