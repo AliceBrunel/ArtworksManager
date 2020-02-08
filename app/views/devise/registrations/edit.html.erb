@@ -2,7 +2,16 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
 
+  <div class="field">
+    <%= f.label :surname %>
+    <%= f.text_field :surname, autocomplete: "surname" %>
+  </div>
+    
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -29,6 +38,21 @@
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+
+  <div>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <br>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+    <br>
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+
+    <%= f.label :group %>
+    <%= f.collection_select :group, Group.all, :name, :name %>
   </div>
 
   <div class="actions">
