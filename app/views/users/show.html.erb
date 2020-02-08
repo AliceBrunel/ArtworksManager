@@ -5,12 +5,13 @@
       <div class="card border-light" style="max-width: 30rem;">
           <div class="card-header"><%= @user.name %> <%= @user.surname %></div>
           <div class="card-body">
+            <h6 class="card-subtitle text-muted">User information</h6>
             <p class="card-text">
-              <p><%= @user.email %></p>
-              <p><%= @user.address %></p>
-              <p><%= @user.phone %></p>
-              <p><%= @user.group %></p>
-              <p><%= @user.position %></p>
+              <p><strong>Email :</strong> <%= @user.email %></p>
+              <p><strong>Address :</strong> <%= @user.address %></p>
+              <p><strong>Phone number :</strong> <%= @user.phone %></p>
+              <p><strong>User type :</strong> <%= @user.group %></p>
+              <p><strong>Occupation :</strong> <%= @user.position %></p>
             </p>
           </div>
       </div>
