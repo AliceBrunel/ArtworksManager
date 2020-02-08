@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
 
-  resources :users, only: [:new, :create]
-  resources :sessions, only: [:new, :create, :destroy]
   resources :collections
   resources :museums
   resources :artists
