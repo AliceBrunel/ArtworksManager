@@ -2,16 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\assets",
-    "\\app\\assets\\images",
     "\\app\\controllers",
-    "\\app\\helpers",
+    "\\app\\controllers\\concerns",
     "\\app\\views",
-    "\\app\\views\\layouts",
-    "\\app\\views\\sessions",
+    "\\app\\views\\artworks",
     "\\app\\views\\users",
-    "\\config"
+    "\\db",
+    "\\db\\migrate"
   ],
-  "SelectedNode": "\\app\\views\\users\\new.html.erb",
+  "SelectedNode": "\\db\\schema.rb",
   "PreviewInSolutionExplorer": false
 }
