@@ -2,14 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\controllers",
-    "\\app\\controllers\\concerns",
-    "\\app\\views",
-    "\\app\\views\\artworks",
-    "\\app\\views\\users",
-    "\\db",
-    "\\db\\migrate"
+    "\\app\\assets",
+    "\\app\\models",
+    "\\app\\views"
   ],
-  "SelectedNode": "\\db\\schema.rb",
+  "SelectedNode": "\\Gemfile.lock",
   "PreviewInSolutionExplorer": false
 }
