@@ -5,8 +5,11 @@ class ArtworksController < ApplicationController
 	end
 
 	def new
-		@artwork = Artwork.new
-		current_user.artworks.build
+		
+		# @artwork = Artwork.new
+		# current_user.artworks.build
+		
+		redirect_to new_artist_url
 	end 
 
 	def create
