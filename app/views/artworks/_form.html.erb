@@ -1,17 +1,24 @@
-<%= form_for @artwork do |f| %>
-	<%= f.label :title %>
-	<%= f.text_field :title %>
-	<br>
-	<%= f.label :artist_id %>
-	<%= f.collection_select :artist_id, Artist.all, :id, :full_name  %>
-	<br>
-	<%= f.label :price %>
-	<%= f.text_field :price %>
-	<br>
-	<%= f.label :technic %>
-	<%= f.text_field :technic %>
-	<br>
+<h2>Add an artwork</h2>
+	<%= form_for @artwork do |f| %>
+		<fieldset>
+			<div class="form-group">
+				<%= f.label :title %>
+				<%= f.text_field :title, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :artist_id %>
+				<%= f.collection_select :artist_id, Artist.all, :id, :full_name, {}, {class: "form-control"} %>
+			</div>
+			<div class="form-group">
+				<%= f.label :price %>
+				<%= f.text_field :price, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :technic %>
+				<%= f.text_field :technic, class: "form-control" %>
+			</div>
 
- <%= f.submit "Add to my collection" %>
-<% end %>
-
+			<%= f.submit "Add to my collection", class: "btn btn-primary" %>
+ 
+		</fieldset>
+	<% end %>
