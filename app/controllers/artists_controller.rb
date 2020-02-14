@@ -9,6 +9,7 @@ class ArtistsController < ApplicationController
 		@artist.artworks.build
 	end 
 
+	#Implement a find or create where the user has to select an artist or create one
 	def create
 		artist = Artist.create(artist_params)
 		artwork = artist.artworks.last
