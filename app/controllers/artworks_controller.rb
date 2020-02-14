@@ -6,16 +6,19 @@ class ArtworksController < ApplicationController
 
 	def new
 		
-		# @artwork = Artwork.new
-		# current_user.artworks.build
-		
-		redirect_to new_artist_url
+		@artwork = Artwork.new
+		@artist = Artist.new
+		current_user.artworks.build		
 	end 
 
 	def create
+		
 		@artwork = Artwork.create(artwork_params)
-		current_user.artworks << @artwork
-		@artwork.save
+		unless params[:artist.full_name].empty?
+			current_user.artworks << @artwork
+			@artwork.save
+		end
+
 		redirect_to user_path(current_user)
 	end 
 
@@ -32,7 +35,6 @@ class ArtworksController < ApplicationController
 
 	def artwork_params 
 		params.require(:artwork).permit(
-			:artist_id,
 			:title,
 			:price,
 			:technic,
