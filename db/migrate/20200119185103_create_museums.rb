@@ -4,7 +4,6 @@ class CreateMuseums < ActiveRecord::Migration[6.0]
 		t.string :name
 		t.string :location
 		t.string :specialty
-		t.belongs_to :user
 
       t.timestamps
     end

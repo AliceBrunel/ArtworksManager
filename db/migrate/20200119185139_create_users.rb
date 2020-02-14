@@ -7,7 +7,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
 			t.string :address
 			t.integer :phone
 			t.string :position
-			t.string :password_digest
 
 			t.timestamps
 		end

@@ -1,0 +1,7 @@
+<h1><%= @collection.name %></h1>
+<br>
+  <ul>
+    <% @collection.artworks.each do |a| %>
+      <li><%= a.title %></li>
+      <% end %>
+    </ul>

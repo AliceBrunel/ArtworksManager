@@ -1,0 +1,12 @@
+<div class="col">
+
+  <h1><%= @artist.full_name %></h1>
+  <p><%= @artist.biography %></p>
+
+  <ul><% @artist.artworks.each do |artwork| %>
+	  <li><%= artwork.title %></li>
+  </ul>
+  <% end %>
+     
+
+</div>
