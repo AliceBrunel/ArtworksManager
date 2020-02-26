@@ -8,16 +8,18 @@ class ArtworksController < ApplicationController
 		
 		@artwork = Artwork.new
 		@artist = Artist.new
-		current_user.artworks.build		
+		current_user.artworks.build
 	end 
 
 	def create
 		
 		@artwork = Artwork.create(artwork_params)
-		unless params[:artist.full_name].empty?
-			current_user.artworks << @artwork
-			@artwork.save
+
+		unless params[:artist][:full_name].empty?
+			artist = @artwork.create_artist(params[:artist])
 		end
+
+		@artwork.save
 
 		redirect_to user_path(current_user)
 	end 
@@ -38,7 +40,14 @@ class ArtworksController < ApplicationController
 			:title,
 			:price,
 			:technic,
-			:user_id
+			:user_id,
+			artist_attributes: [
+				:full_name,
+				:biography,
+				:birth_date,
+				:death_date,
+				:style
+				]
 			)
 	end
 

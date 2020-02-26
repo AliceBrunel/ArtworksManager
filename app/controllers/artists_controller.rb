@@ -7,6 +7,8 @@ class ArtistsController < ApplicationController
 	def new 
 		@artist = Artist.new
 		@artist.artworks.build
+		current_user.artworks.build
+		@artworks = Artwork.all
 	end 
 
 	#Implement a find or create where the user has to select an artist or create one

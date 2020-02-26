@@ -4,13 +4,13 @@
     "\\app",
     "\\app\\controllers",
     "\\app\\controllers\\concerns",
+    "\\app\\models",
     "\\app\\views",
     "\\app\\views\\artists",
+    "\\app\\views\\artworks",
     "\\app\\views\\devise",
-    "\\app\\views\\devise\\registrations",
-    "\\app\\views\\devise\\sessions",
-    "\\app\\views\\users"
+    "\\db"
   ],
-  "SelectedNode": "\\app\\controllers\\application_controller.rb",
+  "SelectedNode": "\\app\\models\\artwork.rb",
   "PreviewInSolutionExplorer": false
 }

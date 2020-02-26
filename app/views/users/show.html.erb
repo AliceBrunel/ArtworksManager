@@ -26,18 +26,18 @@
         </h2>
 
         <ul class="list-group">
-          <% if @user.artworks.none %>
-            <p>No artwork to display</p>
-          <% else %>
-            <% @user.artworks.each do |a| %>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <%= a.title %> by <%= a.artist %>
-              </li>
+          <% if @user.artworks.any? %>
+              <% @user.artworks.each do |artwork| %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">    
+                  <%= link_to artwork.title, artwork_path(artwork.id) %> by <%= artwork.artist.full_name %>
+                </li>
               <% end %>
+          <% else %>            
+            <p>No artwork to display</p>
             <% end %>
         </ul>
           <% unless current_user != @user %>
-            <%= link_to 'Add an art', new_artwork_url %>
+            <%= link_to 'Add an art', new_artist_url %>
           <% end %>
       </div>
 </div>

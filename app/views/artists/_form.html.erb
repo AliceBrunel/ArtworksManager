@@ -1,44 +1,52 @@
-
-<%= form_for @artist do |f| %>
-	<fieldset>
-		<div class="form-group">
-			<%= f.label :full_name %>
-			<%= f.text_field :full_name, class: "form-control" %>
-		</div>
-		<div class="form-group">
-			<%= f.label :biography %>
-			<%= f.text_field :biography, class: "form-control" %>
-		</div>
-		<div class="form-group">
-			<%= f.label :birth_date, "Born" %>
-			<%= f.date_field :birth_date, class: "form-control" %>
-		</div>
-		<div class="form-group">
-			<%= f.label :death_date, "Died" %>
-			<%= f.date_field :death_date, class: "form-control" %>
-		</div>
-		<div class="form-group">
-			<%= f.label :style %>
-			<%= f.text_field :style, class: "form-control" %>
-		</div>
+<h2>Add an artwork</h2>
+	<%= form_for @artist do |f| %>
 		<fieldset>
-		<h3>About the artwork</h3>
-			<%= f.fields_for :artworks do |a| %>
+
+			<fieldset>
+			<h3>About the artwork</h3>
+				<%= f.fields_for :artworks do |a| %>
+				<div class="form-group">
+					<%= f.label :artist_id %>
+					<%= f.collection_select :id, Artist.all, :id, :full_name, {:include_blank => true}, {class: "form-control"} %>
+				</div>
+				<div class="form-group">
+					<%= a.label :title %>
+					<%= a.text_field :title, class: "form-control" %>
+				<div>
+				<div class="form-group">
+					<%= a.label :price %>
+					<%= a.text_field :price, class: "form-control" %>
+				<div>
+				<div class="form-group">
+					<%= a.label :technic %>
+					<%= a.text_field :technic, class: "form-control" %>
+				</div>
+			</fieldset>
+			<% end %>
+
+			<h3>About the artist if is not in the list</h3>
 			<div class="form-group">
-				<%= a.label :title %>
-				<%= a.text_field :title, class: "form-control" %>
-			<div>
-			<div class="form-group">
-				<%= a.label :price %>
-				<%= a.text_field :price, class: "form-control" %>
-			<div>
-			<div class="form-group">
-				<%= a.label :technic %>
-				<%= a.text_field :technic, class: "form-control" %>
+				<%= f.label :full_name %>
+				<%= f.text_field :full_name, class: "form-control" %>
 			</div>
+			<div class="form-group">
+				<%= f.label :biography %>
+				<%= f.text_field :biography, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :birth_date, "Born" %>
+				<%= f.date_field :birth_date, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :death_date, "Died" %>
+				<%= f.date_field :death_date, class: "form-control" %>
+			</div>
+			<div class="form-group">
+				<%= f.label :style %>
+				<%= f.text_field :style, class: "form-control" %>
+			</div>
+			
+	 <%= f.submit "Add to my collection", class: "btn btn-primary" %>
 		</fieldset>
-		<% end %>
- <%= f.submit "Add to my collection", class: "btn btn-primary" %>
-	</fieldset>
-<% end %>
+	<% end %>
 
